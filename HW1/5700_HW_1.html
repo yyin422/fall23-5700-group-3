@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.189">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>hw_1</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="5700_HW_1_files/libs/clipboard/clipboard.min.js"></script>
+<script src="5700_HW_1_files/libs/quarto-html/quarto.js"></script>
+<script src="5700_HW_1_files/libs/quarto-html/popper.min.js"></script>
+<script src="5700_HW_1_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="5700_HW_1_files/libs/quarto-html/anchor.min.js"></script>
+<link href="5700_HW_1_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="5700_HW_1_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="5700_HW_1_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="5700_HW_1_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="5700_HW_1_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="hw-1---designing-blockchain" class="level2">
+<h2 class="anchored" data-anchor-id="hw-1---designing-blockchain">HW 1 - Designing Blockchain</h2>
+<p>Group 3: Shufeng Li, Wenlin Ye, Yifei Yin<br>
+Github link: https://github.com/yyin422/fall23-5700-group-3/tree/main/HW1</p>
+<div class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> hashlib </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> datetime </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ipyparallel <span class="im">as</span> ipp</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="blockchain-data-structure" class="level3">
+<h3 class="anchored" data-anchor-id="blockchain-data-structure">1. Blockchain Data Structure</h3>
+<div class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Block: </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, index, timestamp, data, previous_hash, nonce <span class="op">=</span> <span class="dv">0</span>):</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.index <span class="op">=</span> index</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.timestamp <span class="op">=</span> timestamp</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.data <span class="op">=</span> data</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.nonce <span class="op">=</span> nonce</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.previous_hash <span class="op">=</span> previous_hash</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.<span class="bu">hash</span> <span class="op">=</span> <span class="va">self</span>.hash_block()</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> hash_block(<span class="va">self</span>):</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>        sha <span class="op">=</span> hashlib.sha256()</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        block_hash <span class="op">=</span> (<span class="bu">str</span>(<span class="va">self</span>.index) <span class="op">+</span> <span class="bu">str</span>(<span class="va">self</span>.timestamp) <span class="op">+</span> <span class="bu">str</span>(<span class="va">self</span>.data) <span class="op">+</span> <span class="bu">str</span>(<span class="va">self</span>.previous_hash) <span class="op">+</span> <span class="bu">str</span>(<span class="va">self</span>.nonce))</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        block_hash <span class="op">=</span> block_hash.encode(<span class="st">"utf-8"</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>        sha.update(block_hash)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> sha.hexdigest()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>block_time <span class="op">=</span> <span class="st">'2022-02-13 23:59:00'</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> <span class="st">'Blockchain For Data Science'</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>previous_hash <span class="op">=</span> <span class="st">'9136cfeb0c77b41e1e86cb9940ca9bb65f7aca4e8e366a8ecf9226b735e0c323'</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>index <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>new_block <span class="op">=</span> Block(index, block_time, data, previous_hash)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(new_block.<span class="bu">hash</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>260b5039394689051b599484df495d79a6a33d22a3ca37af72656d8cdfc6fcd5</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test Q1</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> block_validation(index, block_time, data, previous_hash):</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    new_block <span class="op">=</span> Block(index, block_time, data, previous_hash)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    check_string <span class="op">=</span> <span class="st">'260b5039394689051b599484df495d79a6a33d22a3ca37af72656d8cdfc6fcd5'</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    print_statement <span class="op">=</span> <span class="st">"This is a valid Block"</span> <span class="cf">if</span> <span class="bu">str</span>(</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        new_block.<span class="bu">hash</span>) <span class="op">==</span> check_string <span class="cf">else</span> <span class="st">"Please Check your work, this is incorrect."</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(print_statement)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>block_validation(index, block_time, data, previous_hash)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>This is a valid Block</code></pre>
+</div>
+</div>
+</section>
+<section id="creating-a-chain-out-of-single-blocks" class="level3">
+<h3 class="anchored" data-anchor-id="creating-a-chain-out-of-single-blocks">2. Creating a chain out of single blocks</h3>
+<div class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create genesis block w/ current time &amp; generic data</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_genesis_block(): </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> Block(<span class="dv">0</span>, datetime.datetime.now(), <span class="st">"Genesis Block"</span>, <span class="st">"0"</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># create the next block given the last block on the chain you want to mine</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> next_block(last_block, nonce <span class="op">=</span> <span class="dv">0</span>): </span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    this_index <span class="op">=</span> last_block.index <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    this_timestamp <span class="op">=</span> datetime.datetime.now()</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    this_data <span class="op">=</span> <span class="st">"Hey! I'm block "</span> <span class="op">+</span> <span class="bu">str</span>(this_index)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    this_prevhash <span class="op">=</span> last_block.<span class="bu">hash</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> Block(this_index, this_timestamp, this_data, this_prevhash)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test Q2</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> genesis_validation(genesis_block):</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    block_1 <span class="op">=</span> next_block(genesis_block)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> block_1.index <span class="op">==</span> <span class="dv">1</span> <span class="kw">and</span> block_1.data <span class="op">==</span> <span class="st">"Hey! I'm block 1"</span> <span class="kw">and</span> block_1.previous_hash <span class="op">==</span> genesis_block.<span class="bu">hash</span> <span class="kw">and</span> <span class="bu">str</span>(<span class="bu">type</span>(block_1.timestamp)) <span class="op">==</span> <span class="st">"&lt;class 'datetime.datetime'&gt;"</span>:</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Valid Genesis block"</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Check the code, not a valid genesis block:("</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>genesis_block <span class="op">=</span> create_genesis_block()</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>genesis_validation(genesis_block)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Valid Genesis block</code></pre>
+</div>
+</div>
+</section>
+<section id="generating-a-complete-blockchain" class="level3">
+<h3 class="anchored" data-anchor-id="generating-a-complete-blockchain">3. Generating a complete Blockchain</h3>
+<div class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create blockchain + genesis block</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>blockchain<span class="op">=</span> [create_genesis_block()]</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># create initial reference to previous block which points to the genesis block</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>previous_block <span class="op">=</span> blockchain[<span class="dv">0</span>]</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># number of blocks we want in the bc after genesis block</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>num_blocks <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> complete_chain(num_blocks, blockchain, previous_block):</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, num_blocks):</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>        block_to_add <span class="op">=</span> next_block(previous_block)</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>        blockchain.append(block_to_add)</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>        previous_block <span class="op">=</span> block_to_add</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>((<span class="st">"the block #</span><span class="sc">{}</span><span class="st"> is added to the blockchain"</span>.<span class="bu">format</span>(block_to_add.index)))</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Hash : </span><span class="sc">{}</span><span class="ch">\n</span><span class="st">"</span>.<span class="bu">format</span>(block_to_add.<span class="bu">hash</span>))</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>genesis_validation(previous_block)</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>complete_chain(num_blocks, blockchain, previous_block)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Valid Genesis block
+the block #1 is added to the blockchain
+Hash : 0f6193ac230b8fe064f39470cb9965ebfb0f9ce23e9be1c03ec1bada29e7934e
+
+the block #2 is added to the blockchain
+Hash : 0683e615c7c07de9a4aa11b3ecbf726ad529c3f1a8d491e5a963d39bf26d7108
+
+the block #3 is added to the blockchain
+Hash : 39846f670488b8e263c82958514402098c9719dc3a45a5d7059e531565578535
+
+the block #4 is added to the blockchain
+Hash : 6ebb2a0bde6da5af38776080f52dfcf0670c7e94bbd57acd53d36f6fd9a6e7af
+
+the block #5 is added to the blockchain
+Hash : e63f8c3a9ac4de01dfb49a5ac744e1441a82843be657a34f37de39f40113398a
+
+the block #6 is added to the blockchain
+Hash : 450280a3679bf4a584abcdb78b5159ab7fddab5412b0d10f7a025a0a38790760
+
+the block #7 is added to the blockchain
+Hash : 068f0344ef59d7392d1de813cdeae18b63e6b1afbf9294e4daf937f866e67725
+
+the block #8 is added to the blockchain
+Hash : 30e73d6c20ea8bfb013b65561116f9f59bcb1b544a9341ad782ccaa76802b307
+
+the block #9 is added to the blockchain
+Hash : 01a78f181798086a9bd04cd2a7330941a5321b20c7c59e684a8ae59423f28714
+
+the block #10 is added to the blockchain
+Hash : afb594287de4d20945d9f97d1dd399196a7c3cf048f22b5c1bff6010f98340d7
+</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test Q3</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_question_3(blockchain, num_blocks): </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    correct <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(blockchain) <span class="op">!=</span> num_blocks <span class="op">+</span> <span class="dv">1</span>:</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>        correct <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(blockchain) <span class="op">-</span> <span class="dv">1</span>): </span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> blockchain[i<span class="op">+</span><span class="dv">1</span>].previous_hash <span class="op">!=</span> blockchain[i].<span class="bu">hash</span>:</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>            correct <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    print_statement <span class="op">=</span> <span class="st">"PASSED! Move on to the next part."</span> <span class="cf">if</span> correct <span class="cf">else</span> <span class="st">"FAILED! Try again."</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(print_statement)</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>test_question_3(blockchain, num_blocks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>PASSED! Move on to the next part.</code></pre>
+</div>
+</div>
+</section>
+<section id="nonce-and-difficulty" class="level3">
+<h3 class="anchored" data-anchor-id="nonce-and-difficulty">4. Nonce and Difficulty</h3>
+<div class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> generate_nonce(length): </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">""</span>.join([<span class="bu">str</span>(random.randint(<span class="dv">0</span>,<span class="dv">9</span>)) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(length)])</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> generate_difficulty_bound(difficulty <span class="op">=</span><span class="dv">1</span>): </span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    diff_str <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    diff_str <span class="op">+=</span> <span class="st">'0'</span> <span class="op">*</span> difficulty</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    diff_str <span class="op">+=</span> <span class="st">'F'</span> <span class="op">*</span> (<span class="dv">64</span> <span class="op">-</span> difficulty)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    diff_str <span class="op">=</span> <span class="st">"0x"</span> <span class="op">+</span> diff_str <span class="co">#specify: hex representation</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">#print(diff_str)</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span>(<span class="bu">int</span>(diff_str, <span class="dv">16</span>)) <span class="co">#specify: want integer of base 10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># given previous block &amp; difficulty metic, find a nonce that results in a lower hash value\</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> find_next_block(last_block, difficulty, nonce_length):</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    difficulty_bound <span class="op">=</span> generate_difficulty_bound(difficulty)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    start <span class="op">=</span> time.process_time()</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    new_block <span class="op">=</span> next_block(last_block)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    hashes_tried <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="bu">int</span>(new_block.<span class="bu">hash</span>, <span class="dv">16</span>) <span class="op">&gt;</span> difficulty_bound: </span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>        nonce <span class="op">=</span> generate_nonce(nonce_length)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>        new_block <span class="op">=</span> Block(new_block.index, new_block.timestamp, new_block.data, new_block.previous_hash, nonce)</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>        hashes_tried <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    time_taken <span class="op">=</span> time.process_time() <span class="op">-</span> start</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span>(time_taken, hashes_tried, new_block)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Q4 Test</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>blockchain <span class="op">=</span> [create_genesis_block()]</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>previous_block <span class="op">=</span> blockchain[<span class="dv">0</span>]</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>num_blocks <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>difficulty <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>nonce_length <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_blockchain(num_blocks, difficulty, blockchain, previous_block, nonce_length, broadcast<span class="op">=</span><span class="dv">1</span>):</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    hash_ls <span class="op">=</span> []</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>    time_ls <span class="op">=</span> []</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, num_blocks):</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>        timetaken, hash_tried, block_to_add <span class="op">=</span> find_next_block(previous_block, difficulty, nonce_length)</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>        blockchain.append(block_to_add)</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>        previous_block <span class="op">=</span> block_to_add</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>        hash_ls.append(hash_tried)</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>        time_ls.append(timetaken)</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> hash_ls, time_ls</span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>create_blockchain(num_blocks, difficulty, blockchain, previous_block, nonce_length)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="34">
+<pre><code>([7444,
+  618,
+  9420,
+  1362,
+  358,
+  41,
+  12778,
+  6319,
+  2717,
+  2779,
+  1593,
+  4596,
+  6309,
+  1224,
+  1891,
+  7641,
+  7570,
+  1584,
+  2291,
+  1283],
+ [0.0,
+  0.046875,
+  0.03125,
+  0.015625,
+  0.0,
+  0.0,
+  0.09375,
+  0.015625,
+  0.0,
+  0.03125,
+  0.015625,
+  0.03125,
+  0.046875,
+  0.015625,
+  0.015625,
+  0.0625,
+  0.03125,
+  0.0,
+  0.0,
+  0.015625])</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> blockchain_proof(blockchain, num_blocks):</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    correct <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    bound <span class="op">=</span> generate_difficulty_bound(difficulty)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(blockchain) <span class="op">!=</span> num_blocks <span class="op">+</span> <span class="dv">1</span>:</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>        correct <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(blockchain) <span class="op">-</span> <span class="dv">1</span>):</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> blockchain[i <span class="op">+</span> <span class="dv">1</span>].previous_hash <span class="op">!=</span> blockchain[i].<span class="bu">hash</span>:</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>            correct <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">int</span>(blockchain[i <span class="op">+</span> <span class="dv">1</span>].<span class="bu">hash</span>, <span class="dv">16</span>) <span class="op">&gt;</span> bound:</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>            correct <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>    print_statement <span class="op">=</span> <span class="st">"PASSED!!! Move on to the next Part"</span> <span class="cf">if</span> correct <span class="cf">else</span> <span class="st">"FAILED!!! Try Again :("</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(print_statement)</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>blockchain_proof(blockchain, num_blocks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>PASSED!!! Move on to the next Part</code></pre>
+</div>
+</div>
+</section>
+<section id="distributed-network" class="level3">
+<h3 class="anchored" data-anchor-id="distributed-network">5. Distributed Network</h3>
+<div class="cell" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Naive miner class that races with other miners to see who can get a certain number of blocks first</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MinerNodeNaive:</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, compute):</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.compute <span class="op">=</span> compute</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> try_hash(<span class="va">self</span>, diff_value, chain):</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>        last_block <span class="op">=</span> chain[<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>        difficulty <span class="op">=</span> generate_difficulty_bound(diff_value)</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>        date_now <span class="op">=</span> datetime.datetime.now()</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>        this_index <span class="op">=</span> last_block.index <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>        this_timestamp <span class="op">=</span> date_now</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>        this_data <span class="op">=</span> <span class="st">"Hey! I'm block "</span> <span class="op">+</span> <span class="bu">str</span>(this_index)</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>        this_hash <span class="op">=</span> last_block.<span class="bu">hash</span></span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>        new_block <span class="op">=</span> Block(this_index, this_timestamp, this_data, this_hash)</span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">int</span>(new_block.<span class="bu">hash</span>, <span class="dv">16</span>) <span class="op">&lt;</span> difficulty:</span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>            chain.append(new_block)</span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Tell everyone about it!</span></span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Block #</span><span class="sc">{}</span><span class="st"> has been added to the blockchain!"</span>.<span class="bu">format</span>(new_block.index))</span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Block found by: </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(<span class="va">self</span>.name))</span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Hash: </span><span class="sc">{}</span><span class="ch">\n</span><span class="st">"</span>.<span class="bu">format</span>(new_block.<span class="bu">hash</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="38">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initiate multiple miners on network</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>miner_1 <span class="op">=</span> MinerNodeNaive(<span class="st">"Miner 1"</span>, <span class="dv">8</span>)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>miner_2 <span class="op">=</span> MinerNodeNaive(<span class="st">"Miner 2"</span>, <span class="dv">6</span>)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>miner_3 <span class="op">=</span> MinerNodeNaive(<span class="st">"Miner 3"</span>, <span class="dv">9</span>)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>miner_4 <span class="op">=</span> MinerNodeNaive(<span class="st">"Miner 4"</span>, <span class="dv">3</span>)</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>miner_5 <span class="op">=</span> MinerNodeNaive(<span class="st">"Miner 5"</span>, <span class="dv">1</span>)</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>miners <span class="op">=</span> [miner_1, miner_2, miner_3, miner_4, miner_5]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="40">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_compute_simulation(miner_array): </span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    compute_array <span class="op">=</span> []</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> miner <span class="kw">in</span> miner_array:</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(miner.compute):</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>            compute_array.append(miner.name)</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> compute_array</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>compute_simulation_array <span class="op">=</span> create_compute_simulation(miners)</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>random.shuffle(compute_simulation_array)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="41">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>chain_length <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>blockchain_distributed <span class="op">=</span> [create_genesis_block()]</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>genesis_block_dist <span class="op">=</span> blockchain_distributed[<span class="dv">0</span>]</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>chain_difficulty <span class="op">=</span> [random.randint(<span class="dv">2</span>, <span class="dv">6</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(chain_length)]</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(chain_difficulty)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[6, 3, 2, 5, 4, 2, 4, 3, 2, 6, 2, 4, 4, 6, 2, 5, 4, 2, 2, 6]</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="42">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(chain_difficulty)): </span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="bu">len</span>(blockchain_distributed) <span class="op">&lt;</span> i <span class="op">+</span> <span class="dv">2</span> : </span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>        next_miner_str <span class="op">=</span> random.sample(compute_simulation_array, <span class="dv">1</span>)[<span class="dv">0</span>]</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>        next_miner <span class="op">=</span> miner_2</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> miner <span class="kw">in</span> miners: </span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> next_miner_str <span class="op">==</span> miner.name:</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>                next_miner <span class="op">=</span> miner</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>        next_miner.try_hash(chain_difficulty[<span class="dv">1</span>], blockchain_distributed)</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Block #1 has been added to the blockchain!
+Block found by: Miner 3
+Hash: 0001dfab3589e10136e4e94433452120c80268ed1cf329880050f88702521ee7
+
+Block #2 has been added to the blockchain!
+Block found by: Miner 1
+Hash: 0009fa3b000adea8395baf81fbd9186b3e75539c4cc4146d2b3b397608ed019a
+
+Block #3 has been added to the blockchain!
+Block found by: Miner 1
+Hash: 000ad619ef6ad969555bb98da3306462c90b611bc7b6b3f0af34c55b40817e50
+
+Block #4 has been added to the blockchain!
+Block found by: Miner 2
+Hash: 00089169da9b22d29021a1906ff8c586b5db05765f2af8add2c83f4dc908fc55
+
+Block #5 has been added to the blockchain!
+Block found by: Miner 1
+Hash: 000533b95cfc124bf1cc3991eb31562ca441f4b8d77f5206a79a9aa4091c86c5
+
+Block #6 has been added to the blockchain!
+Block found by: Miner 1
+Hash: 000f30194e8e0944eb049e25cedde13f739c8c30157247c923d7a015394e46d9
+
+Block #7 has been added to the blockchain!
+Block found by: Miner 4
+Hash: 000412b95dd956f2c5da0870252babeab9f09a0e49779e4fb2a4ca77869c151c
+
+Block #8 has been added to the blockchain!
+Block found by: Miner 1
+Hash: 0009c54534cc0e95106fb08f92cd3d691dcf56c5e4079a29f02d0e33ec8d25fa
+
+Block #9 has been added to the blockchain!
+Block found by: Miner 2
+Hash: 000b53a3f01f04e63a23b702d6316489cad5f8e26930ff266adb0c4a5e5f43fa
+
+Block #10 has been added to the blockchain!
+Block found by: Miner 3
+Hash: 000f7bcd550142d73b6082cbff48d99112aee3aa6711de2713f6ba7b17b43e24
+
+Block #11 has been added to the blockchain!
+Block found by: Miner 2
+Hash: 000d0668c7136fde9ad14345b98f9629ad01577a86ebf616eaa072790e425830
+
+Block #12 has been added to the blockchain!
+Block found by: Miner 1
+Hash: 0009ab2b97dc7fe85fb0b5990793922e570dc6fb373ac4aed95280cd06cdac14
+
+Block #13 has been added to the blockchain!
+Block found by: Miner 3
+Hash: 000352f9f2b0502174ede6f8e173d6043c8dc85980280dabbf8d9937fb65cf4c
+
+Block #14 has been added to the blockchain!
+Block found by: Miner 1
+Hash: 000ce150763ea791915678909c79bf97d000927fbf9f4b272096c556ce9571ec
+
+Block #15 has been added to the blockchain!
+Block found by: Miner 2
+Hash: 000cfd0577607c14c4fd14fa169fc286a9945bdbdc841bf7e1350bf38dfe7256
+
+Block #16 has been added to the blockchain!
+Block found by: Miner 4
+Hash: 000b0c5c2e4e6d2d574d6dbefd9f13113870651f129d6b8f86d3c0431421b996
+
+Block #17 has been added to the blockchain!
+Block found by: Miner 3
+Hash: 00059bc3a3a9b46a05297187ad0268eae992c2066093ea29d75915dd5640679c
+
+Block #18 has been added to the blockchain!
+Block found by: Miner 1
+Hash: 00025b631e4c4d24857bcf2536cb79be3801cf27f3cac01944c8c75730989fc7
+
+Block #19 has been added to the blockchain!
+Block found by: Miner 1
+Hash: 00001e64481e3e768b17dfc4dbb7070753084a88fb51acfae9d33336155af733
+
+Block #20 has been added to the blockchain!
+Block found by: Miner 2
+Hash: 00034a5a6be0bbf668ba00a3972178ca5e91d3aa13d7166d4bfb6e41ad70d04d
+</code></pre>
+</div>
+</div>
+</section>
+<section id="analytics-on-the-blockchain-data" class="level3">
+<h3 class="anchored" data-anchor-id="analytics-on-the-blockchain-data">6. Analytics on the Blockchain Data</h3>
+<div class="cell" data-execution_count="43">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>num_blocks <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>blockchain <span class="op">=</span> [create_genesis_block()]</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>previous_block <span class="op">=</span> blockchain[<span class="dv">0</span>]</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="co"># diff types of difficulty to analyze</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>difficulty_0 <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>difficulty_1 <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>difficulty_2 <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>difficulty_3 <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>nonce_length <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>hash_array_0, time_array_0 <span class="op">=</span> create_blockchain(num_blocks, difficulty_0, blockchain, previous_block, nonce_length, <span class="dv">0</span>)</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Difficulty level: </span><span class="sc">{}</span><span class="st"> complete"</span>.<span class="bu">format</span>(difficulty_0))</span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>hash_array_1, time_array_1 <span class="op">=</span> create_blockchain(num_blocks, difficulty_1, blockchain, previous_block, nonce_length, <span class="dv">0</span>)</span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Difficulty level: </span><span class="sc">{}</span><span class="st"> complete"</span>.<span class="bu">format</span>(difficulty_1))</span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>hash_array_2, time_array_2 <span class="op">=</span> create_blockchain(num_blocks, difficulty_2, blockchain, previous_block, nonce_length, <span class="dv">0</span>)</span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Difficulty level: </span><span class="sc">{}</span><span class="st"> complete"</span>.<span class="bu">format</span>(difficulty_2))</span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>hash_array_3, time_array_3 <span class="op">=</span> create_blockchain(num_blocks, difficulty_3, blockchain, previous_block, nonce_length, <span class="dv">0</span>)</span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Difficulty level: </span><span class="sc">{}</span><span class="st"> complete"</span>.<span class="bu">format</span>(difficulty_3))</span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Difficulty level: 1 complete
+Difficulty level: 2 complete
+Difficulty level: 3 complete
+Difficulty level: 4 complete</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="44">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>mean_arr_hash <span class="op">=</span> [np.mean(hash_array_0), np.mean(hash_array_1), np.mean(hash_array_2), np.mean(hash_array_3)]</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>mean_arr_time <span class="op">=</span> [np.mean(time_array_0), np.mean(time_array_1), np.mean(time_array_2), np.mean(time_array_3)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="45">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>plt.plot(mean_arr_hash)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Difficulty Levels"</span>)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Mean Hash Value"</span>)</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Mean Hash Values for Difficulty Levels 1-4'</span>)</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="5700_HW_1_files/figure-html/cell-21-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
